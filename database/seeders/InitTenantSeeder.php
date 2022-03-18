@@ -26,6 +26,10 @@ class InitTenantSeeder extends Seeder
                 'email'     => $tenant->domains->first()->domain.'@ican.my',
                 'password'  => Hash::make('secret')
             ]);
+
+            User::factory(5)->create([
+                'password'  => Hash::make('secret')
+            ]);
         });
     }
 }
