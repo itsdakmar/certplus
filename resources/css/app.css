@@ -1,2 +1,4 @@
 @import 'tabler/tabler.min.css';
 @import 'tabler/demo.min.css';
+
+[x-cloak] { display: none !important; }

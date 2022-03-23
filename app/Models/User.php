@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 use Stancl\Tenancy\Database\Concerns\BelongsToTenant;
 
 /**
@@ -45,7 +46,7 @@ use Stancl\Tenancy\Database\Concerns\BelongsToTenant;
  */
 class User extends Authenticatable
 {
-    use BelongsToTenant, HasApiTokens, HasFactory, Notifiable;
+    use BelongsToTenant, HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.

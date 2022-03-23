@@ -18,6 +18,17 @@ return [
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
+   |--------------------------------------------------------------------------
+   | Banned Subdomain
+   |--------------------------------------------------------------------------
+   |
+   | Banned malicious name for subdomain from registering to the application.
+   |
+   */
+
+    'banned_subdomain' => [],
+
+    /*
     |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
@@ -179,7 +190,9 @@ return [
         App\Providers\TenancyServiceProvider::class,
         Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Spatie\Permission\PermissionServiceProvider::class
+        Spatie\Permission\PermissionServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*

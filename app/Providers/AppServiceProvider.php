@@ -26,5 +26,9 @@ class AppServiceProvider extends ServiceProvider
         if ($this->app->isLocal()) {
             $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
         }
+
+        if (\Storage::disk('local')->exists('banned_subdomain.json')){
+            config(['app.banned_subdomain' => json_decode(\Storage::disk('local')->get('banned_subdomain.json'))]);
+        }
     }
 }

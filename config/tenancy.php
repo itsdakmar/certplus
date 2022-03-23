@@ -17,8 +17,10 @@ return [
      * Only relevant if you're using the domain or subdomain identification middleware.
      */
     'central_domains' => [
-        'ican-app.test'
+        env('CENTRAL_DOMAIN', 'certplus-app.test')
     ],
+
+    'central_domain' => env('CENTRAL_DOMAIN', 'certplus-app.test'),
 
     /**
      * Tenancy bootstrappers are executed when tenancy is initialized.
@@ -166,7 +168,7 @@ return [
         // Stancl\Tenancy\Features\TelescopeTags::class,
         // Stancl\Tenancy\Features\UniversalRoutes::class,
         // Stancl\Tenancy\Features\TenantConfig::class, // https://tenancyforlaravel.com/docs/v3/features/tenant-config
-        // Stancl\Tenancy\Features\CrossDomainRedirect::class, // https://tenancyforlaravel.com/docs/v3/features/cross-domain-redirect
+         Stancl\Tenancy\Features\CrossDomainRedirect::class, // https://tenancyforlaravel.com/docs/v3/features/cross-domain-redirect
     ],
 
     /**

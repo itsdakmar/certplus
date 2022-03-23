@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('app');
-});
+Route::get('/sign-up', function () {
+    return view('authentication.signup');
+})->name('sign-up');
+
+Route::get('/sign-in', function () {
+    return true;
+})->name('sign-in');
