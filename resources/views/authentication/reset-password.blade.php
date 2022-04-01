@@ -4,34 +4,11 @@
             <div class="text-center mb-4">
                 <a href="." class="navbar-brand navbar-brand-autodark"><img src="{{ asset('img/logo.svg') }}" height="36" alt=""></a>
             </div>
-            <form class="card card-md" action="{{ route('register') }}" method="POST">
+            <form class="card card-md" action="{{ route('password.update') }}" method="post">
                 @csrf
                 <div class="card-body">
-                    <h2 class="card-title text-center mb-4">{{ __('Create new account') }}</h2>
-                    <div class="mb-3">
-                        <label class="form-label">{{ __('Name') }}</label>
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="{{ __('Enter your name') }}">
-                        <x-input.error-label for="name"/>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">{{ __('Team name') }}</label>
-                        <input type="text" name="team_name" class="form-control @error('team_name') is-invalid @enderror" placeholder="{{ __('Enter team name') }}">
-                        <x-input.error-label for="team_name"/>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">{{ __('Subdomain') }}</label>
-                        <div class="input-group mb-2">
-                            <input type="text" name="subdomain" class="form-control @error('subdomain') is-invalid @enderror" placeholder="subdomain" autocomplete="off">
-                            <span class="input-group-text">
-                                {{ config('app.name') }}
-                              </span>
-                            <x-input.error-label for="subdomain"/>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">{{ __('Email address') }}</label>
-                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="{{ __('Enter email') }}">
-                    </div>
+                    <h2 class="card-title text-center mb-4">{{ __('Forgot password') }}</h2>
+
                     <div class="mb-3" x-data="{ togglePassword : false, input : 'password' }">
                         <label class="form-label">{{ __('Password') }}</label>
 
@@ -46,6 +23,7 @@
                             <x-input.error-label for="password"/>
                         </div>
                     </div>
+
                     <div class="mb-3" x-data="{ togglePassword : false, input : 'password' }">
                         <label class="form-label">{{ __('Password confirmation') }}</label>
                         <div class="input-group">
@@ -58,20 +36,21 @@
                             </span>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-check">
-                            <input type="checkbox" name="terms" class="form-check-input"/>
-                            <span class="form-check-label">{{ __('Agree the') }} <a href="#" tabindex="-1">{{ __('terms and policy') }}</a>.</span>
-                        </label>
-                        <x-input.error-label for="terms"/>
-                    </div>
+
+                    <input type="hidden" name="email" value="{{ request()->email }}">
+                    <input type="hidden" name="token" value="{{ request()->token }}">
+
                     <div class="form-footer">
-                        <button type="submit" class="btn btn-primary w-100">{{ __('Create new account') }}</button>
+                        <button type="submit" class="btn btn-primary w-100">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/mail -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="3" y="5" width="18" height="14" rx="2" /><polyline points="3 7 12 13 21 7" /></svg>
+                           {{ __('Update password') }}
+                        </button>
                     </div>
                 </div>
             </form>
             <div class="text-center text-muted mt-3">
-                {{ __('Already have account?') }} <a href="{{ route('sign-in') }}" tabindex="-1">{{ __('Sign in') }}</a>
+                {{ __('Forget it') }}, <a href="./sign-in.html">{{ __('send me back') }}</a> {{ __('to the sign in screen') }}.
             </div>
         </div>
     </div>
