@@ -23,7 +23,7 @@
                         <div class="input-group mb-2">
                             <input value="{{ old('subdomain') }}" type="text" name="subdomain" class="form-control @error('subdomain') is-invalid @enderror" placeholder="subdomain" autocomplete="off">
                             <span class="input-group-text">
-                                {{ config('app.name') }}
+                                {{ config('tenancy.central_domain') }}
                               </span>
                             <x-input.error-label for="subdomain"/>
                         </div>
