@@ -11,7 +11,7 @@
                     <p class="text-muted mb-4">{{ __('Enter your email address and your password will be reset and emailed to you') }}.</p>
                     <div class="mb-3">
                         <label class="form-label">{{ __('Email address') }}</label>
-                        <input type="email" name="email" class="form-control" placeholder="Enter email">
+                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="{{ __('Enter email') }}">
                         <x-input.error-label for="email"/>
                     </div>
                     <div class="form-footer">
@@ -24,7 +24,7 @@
                 </div>
             </form>
             <div class="text-center text-muted mt-3">
-                {{ __('Forget it') }}, <a href="./sign-in.html">{{ __('send me back') }}</a> {{ __('to the sign in screen') }}.
+                {{ __('Forget it') }}, <a href="{{ route('login') }}">{{ __('send me back') }}</a> {{ __('to the sign in screen') }}.
             </div>
         </div>
     </div>

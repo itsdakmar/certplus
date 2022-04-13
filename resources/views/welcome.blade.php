@@ -49,7 +49,7 @@
 </header><!-- End Header -->
 
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="hero d-flex align-items-center" style="background: url({{ asset('img/hero-bg.png') }}) top center no-repeat">
+<section id="hero" class="hero d-flex align-items-center" style="background: url({{ asset('img/hero-bg.png') }}) left bottom no-repeat">
 
     <div class="container">
         <div class="row">

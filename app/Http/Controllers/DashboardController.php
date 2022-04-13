@@ -8,7 +8,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-
-        return tenant('id');
+        return view('dashboard');
     }
 }

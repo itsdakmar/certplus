@@ -2,22 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tenant;
-use App\Models\User;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
-class TeamController extends Controller
+class ProgrammeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-
-     */
-    public function index()
+    public function index(): View
     {
-        $users = User::query()->paginate(3);
-
-        return view('team.browse', compact('users'));
+        return view('app');
     }
 
     /**

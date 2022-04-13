@@ -86,7 +86,14 @@
                     <a href="#" class="dropdown-item">Feedback</a>
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item">Settings</a>
-                    <a href="#" class="dropdown-item">Logout</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <div class="nav-item">
+                            <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();this.closest('form').submit(); " role="button">
+                                {{ __('Log Out') }}
+                            </a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

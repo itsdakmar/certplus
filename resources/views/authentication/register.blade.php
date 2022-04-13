@@ -31,10 +31,11 @@
                     <div class="mb-3">
                         <label class="form-label">{{ __('Email address') }}</label>
                         <input value="{{ old('email') }}" type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="{{ __('Enter email') }}">
+                        <x-input.error-label for="email"/>
                     </div>
+
                     <div class="mb-3" x-data="{ togglePassword : false, input : 'password' }">
                         <label class="form-label">{{ __('Password') }}</label>
-
                         <div class="input-group">
                             <input :type="input" type="password" name="password" class="form-control @error('password') is-invalid @enderror"  placeholder="{{ __('Password') }}"  autocomplete="off">
                             <span class="input-group-text">
